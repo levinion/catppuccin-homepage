@@ -9,7 +9,8 @@
       function updateTime() {
         const now = new Date();
         const timeString = now.toLocaleTimeString("zh-CN", { hour12: false });
-        document.getElementById("time").innerText = timeString;
+        document.getElementById("time").innerText =
+          timeString.slice(0, 5) + " " + (now.getHours > 12 ? "AM" : "PM");
       }
       setInterval(updateTime, 1000);
     </script>
